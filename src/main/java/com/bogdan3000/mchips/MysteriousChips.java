@@ -1,5 +1,6 @@
 package com.bogdan3000.mchips;
 
+import com.bogdan3000.mchips.item.ModCreativeModTabs;
 import com.bogdan3000.mchips.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +27,8 @@ public class MysteriousChips
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -39,9 +42,6 @@ public class MysteriousChips
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.MINI_SYHARIC);
-        }
     }
 
     @SubscribeEvent
