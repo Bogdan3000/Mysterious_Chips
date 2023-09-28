@@ -26,9 +26,7 @@ public class MysteriousChips
     public  MysteriousChips()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         ModCreativeModTabs.register(modEventBus);
-
         ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -42,6 +40,9 @@ public class MysteriousChips
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.MINI_SYHARIC);
+        }
     }
 
     @SubscribeEvent

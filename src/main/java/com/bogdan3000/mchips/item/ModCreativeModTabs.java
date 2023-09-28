@@ -15,7 +15,7 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MysteriousChips.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> MYSTERIOUS_CHIPS_TAB = CREATIVE_MODE_TABS.register("mchips_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.DIAMOND))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.MINI_SYHARIC.get()))
                     .title(Component.translatable("creativetab.mchips_tab"))
                     .displayItems((pParameters, pOutput) ->  {
                         pOutput.accept(ModItems.MINI_SYHARIC.get());
